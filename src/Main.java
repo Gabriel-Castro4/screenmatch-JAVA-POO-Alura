@@ -12,6 +12,7 @@ public class Main {
         newFilm.avalia(5);
         newFilm.avalia(10);
         newFilm.avalia(5);
+        newFilm.avalia(4);
         System.out.println(newFilm.getSomaDasAvaliacoes());
         System.out.println(newFilm.getTotalDeAvaliacoes());
         newFilm.exibeFichaTecnica();
