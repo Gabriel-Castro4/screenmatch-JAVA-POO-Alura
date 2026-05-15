@@ -65,32 +65,22 @@ public class Filmes {
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
         System.out.println("Duração em minutos: " + duracaoEmMinutos);
         //COMMIT 2
-        /*E mudei um pouco desse método: */
         System.out.printf("Média Global: %.1f", mediaDasAvaliacoes());
     }
 
-    void avalia(double nota){
+    void avalia(double nota) {
 
         /*Antes eu estava usando apenas o "if", mas eu estava achando
-        * fora dos padrões aparecer um aviso em forma de sout na tela de runtime,
-        * por isso decidi usar o Exception*/
-        if (nota > 10 || nota < 0)
-        {
+         * fora dos padrões aparecer um aviso em forma de sout na tela de runtime,
+         * por isso decidi usar o Exception*/
+        //COMMIT 3
+        /*Novamente uma remoção de verbosidade, dessa vez no try catch dentro do else, que não precisva, era apenas fechar a condição e dizer oque ela deveria ser feita caso fosse falsa*/
+        if (nota > 10 || nota < 0) {
             throw new RuntimeException("Valor de nota inválido, Insira um valor entre 0 e 10");
         }
-        else
-        {
-            try
-            {
-                somaDasAvaliacoes += nota;
-                totalDeAvaliacoes++;
-            }
-            catch (Exception e)
-            {
-                System.out.println("Erro ao adicionar nota: " + e.getMessage());
-            }
+        somaDasAvaliacoes += nota;
+        totalDeAvaliacoes++;
 
-        }
     }
 
     //COMMIT 2
