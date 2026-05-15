@@ -2,16 +2,13 @@ package br.com.alura.screenmatch.modelos;
 
 public class Filmes {
 
-    //COMMIT 4
-    /*Como agora foi criado um package para guardar a classse filmes, é necessário deixar explicito que os atributos são públicos*/
-
     //Atributos
-     public String nome;
-     public int anoDeLancamento;
-     public boolean incluidoNoPlano;
-     public double somaDasAvaliacoes;
-     public int totalDeAvaliacoes;
-     public int duracaoEmMinutos;
+     private String nome;
+     private int anoDeLancamento;
+     private boolean incluidoNoPlano;
+     private double somaDasAvaliacoes;
+     private int totalDeAvaliacoes;
+     private int duracaoEmMinutos;
 
 
      //Getters and Setters
@@ -39,21 +36,13 @@ public class Filmes {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public double getSomaDasAvaliacoes() {
-        return somaDasAvaliacoes;
-    }
-
-    public void setSomaDasAvaliacoes(double somaDasAvaliacoes) {
-        this.somaDasAvaliacoes = somaDasAvaliacoes;
-    }
+    //Não quero que o usuário tenha acesso a soma das avaliações
 
     public int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;
     }
 
-    public void setTotalDeAvaliacoes(int totalDeAvaliacoes) {
-        this.totalDeAvaliacoes = totalDeAvaliacoes;
-    }
+    //Não quero que o usuário tenha acesso ao set do total avaliações
 
     public int getDuracaoEmMinutos() {
         return duracaoEmMinutos;
@@ -65,7 +54,7 @@ public class Filmes {
 
 
     //COMMIT 4
-    /*Isso também que acontecer nos métodos*/
+    /*Como agora foi criado um package para guardar a classse filmes, é necessário deixar explicito que os métodos são públicos*/
 
     //Métodos
    public void exibeFichaTecnica(){
