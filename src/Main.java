@@ -1,3 +1,5 @@
+import br.com.alura.screenmatch.modelos.Filmes;
+
 public class Main {
     public static void main(String[] args) {
 

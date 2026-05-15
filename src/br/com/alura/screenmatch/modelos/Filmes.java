@@ -1,12 +1,17 @@
+package br.com.alura.screenmatch.modelos;
+
 public class Filmes {
 
+    //COMMIT 4
+    /*Como agora foi criado um package para guardar a classse filmes, é necessário deixar explicito que os atributos são públicos*/
+
     //Atributos
-     private String nome;
-     private int anoDeLancamento;
-     private boolean incluidoNoPlano;
-     private double somaDasAvaliacoes;
-     private int totalDeAvaliacoes;
-     private int duracaoEmMinutos;
+     public String nome;
+     public int anoDeLancamento;
+     public boolean incluidoNoPlano;
+     public double somaDasAvaliacoes;
+     public int totalDeAvaliacoes;
+     public int duracaoEmMinutos;
 
 
      //Getters and Setters
