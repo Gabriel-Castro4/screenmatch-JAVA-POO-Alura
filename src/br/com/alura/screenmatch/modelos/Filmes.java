@@ -64,8 +64,11 @@ public class Filmes {
     }
 
 
+    //COMMIT 4
+    /*Isso também que acontecer nos métodos*/
+
     //Métodos
-    void exibeFichaTecnica(){
+   public void exibeFichaTecnica(){
         System.out.println("Nome do Filme: " + nome);
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
         System.out.println("Duração em minutos: " + duracaoEmMinutos);
@@ -73,7 +76,7 @@ public class Filmes {
         System.out.printf("Média Global: %.1f", mediaDasAvaliacoes());
     }
 
-    void avalia(double nota) {
+    public void avalia(double nota) {
 
         /*Antes eu estava usando apenas o "if", mas eu estava achando
          * fora dos padrões aparecer um aviso em forma de sout na tela de runtime,
@@ -100,7 +103,7 @@ public class Filmes {
     }
 }
 *   Para: */
-    double mediaDasAvaliacoes(){
+    public double mediaDasAvaliacoes(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
 
     }
