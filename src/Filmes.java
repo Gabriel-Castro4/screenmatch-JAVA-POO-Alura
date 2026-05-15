@@ -64,16 +64,15 @@ public class Filmes {
         System.out.println("Nome do Filme: " + nome);
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
         System.out.println("Duração em minutos: " + duracaoEmMinutos);
-        /*Coloquei este print (sem o "ln")
-        * para que a media global ficasse na mesma linha
-        * do "Média Global: "*/
-        System.out.print("Média Global: ");mediaGlobal();
+        //COMMIT 2
+        /*E mudei um pouco desse método: */
+        System.out.printf("Média Global: %.1f", mediaDasAvaliacoes());
     }
 
     void avalia(double nota){
 
         /*Antes eu estava usando apenas o "if", mas eu estava achando
-        * fora dos padrões aparecer um aviso em forma de sout na tela de resposta
+        * fora dos padrões aparecer um aviso em forma de sout na tela de runtime,
         * por isso decidi usar o Exception*/
         if (nota > 10 || nota < 0)
         {
@@ -94,7 +93,9 @@ public class Filmes {
         }
     }
 
-    double mediaDasAvaliacoes(){
+    //COMMIT 2
+    /*Para diminuir a quantidade de linhas, percebi q o métedo mediaGlobal era redundante e então decidi descobrir outra forma de trabalhar esse método e veja como ficou mais simples e menos verboso:
+        * double mediaDasAvaliacoes(){
         double media = somaDasAvaliacoes / totalDeAvaliacoes;
         return media;
     }
@@ -102,4 +103,11 @@ public class Filmes {
     void mediaGlobal(){
         System.out.printf("%.1f", mediaDasAvaliacoes());
     }
+}
+*   Para: */
+    double mediaDasAvaliacoes(){
+        return somaDasAvaliacoes / totalDeAvaliacoes;
+
+    }
+
 }
