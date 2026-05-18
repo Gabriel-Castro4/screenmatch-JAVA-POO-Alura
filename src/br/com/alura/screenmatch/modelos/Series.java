@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Series extends Titulo{
+public class Series extends Titulos {
     private int temporadas;
     private int episodiosPorTemporada;
     private boolean ativa;
@@ -38,5 +38,15 @@ public class Series extends Titulo{
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
+    //Aplicando conceitos de polimorfismo
+    @Override
+    public int getDuracaoEmMinutos() {
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
+    }
 
+    @Override
+    public void exibeFichaTecnica() {
+        super.exibeFichaTecnica();
+        System.out.println("Duração em minutos para maratonar a série: " + getDuracaoEmMinutos());
+    }
 }

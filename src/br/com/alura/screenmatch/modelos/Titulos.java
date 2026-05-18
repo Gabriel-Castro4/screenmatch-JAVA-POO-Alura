@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Titulo {
+public class Titulos {
 
     //Atributos
     private String nome;
@@ -58,6 +58,8 @@ public class Titulo {
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
         System.out.println("Duração em minutos: " + duracaoEmMinutos);
         System.out.printf("Média Global: %.1f", mediaDasAvaliacoes());
+        //Apenas para dar um espaçamento
+        System.out.println("");
     }
 
     public void avalia(double nota) {
