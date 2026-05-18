@@ -6,9 +6,7 @@ public class Filmes extends Titulos {
     private String diretor;
 
 
-
      //Getters and Setters
-
     public String getDiretor() {
         return diretor;
     }
