@@ -1,6 +1,8 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Filmes extends Titulos {
+import br.com.alura.screenmatch.calculos.Classificavel;
+
+public class Filmes extends Titulos implements Classificavel {
 
     //Atributos
     private String diretor;
@@ -18,4 +20,10 @@ public class Filmes extends Titulos {
 
     //Métodos
 
+
+    //Para funcionar o implements de uma imterface, é necessário criar o método do atributo exigido da interface Mãe, que no caso é "int getClassificacao();"
+    @Override
+    public int getClassificacao() {
+        return 0;
+    }
 }
