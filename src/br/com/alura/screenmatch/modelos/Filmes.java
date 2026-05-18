@@ -24,6 +24,7 @@ public class Filmes extends Titulos implements Classificavel {
     //Para funcionar o implements de uma imterface, é necessário criar o método do atributo exigido da interface Mãe, que no caso é "int getClassificacao();"
     @Override
     public int getClassificacao() {
-        return 0;
+        //Transformando o método média "mediaDasAvaliacoes" que é um double em int
+        return (int) mediaDasAvaliacoes() / 2;
     }
 }
