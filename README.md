@@ -1,3 +1,5 @@
+/* OBS: Dos Commits 1 até o 11 todo o aprendizado foi centrado no curso da Alura:  Formação Aprenda a programar em Java com Orientação a Objetos. A partir dos commits 12 , ele está centrado no curso: Java trabalhando com lista e coleções de dados. */
+
 Neste projeto estou acompanhando as aulas da Alura do curso: Formação Aprenda a programar em Java com Orientação a Objetos.
 No primeiro (1°) commit foi a criação do projeto em si, criação da classe Main e Flmes, criação de métodos e atributos;
 O segundo (2°)  commit foram as primeiras modificações de métodos muito extensos como: a modificação do "mediaDasAvaliacoes" e algumas modificações "exibeFichaTecnica" e um exception no método "avalia";
