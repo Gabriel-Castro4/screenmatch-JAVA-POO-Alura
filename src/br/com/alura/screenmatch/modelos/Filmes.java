@@ -19,6 +19,12 @@ public class Filmes extends Titulos implements Classificavel {
 
     //Métodos
 
+    //Método Construtor
+    public Filmes(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
+
+
 
     //Para funcionar o implements de uma imterface, é necessário criar o método do atributo exigido da interface Mãe, que no caso é "int getClassificacao();"
     @Override

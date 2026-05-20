@@ -38,6 +38,13 @@ public class Series extends Titulos {
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
 
+
+    //Método construtor
+    public Series(String nome, int anoDeLancamento) {
+        //o "super", ele está referenciando a classe titulo, mas métodos construtores não possuem herança, cada classe tem a sua, mas pode herdar os parâmetros da class mãe
+        super(nome, anoDeLancamento);
+    }
+
     //Aplicando conceitos de polimorfismo
     @Override
     public int getDuracaoEmMinutos() {

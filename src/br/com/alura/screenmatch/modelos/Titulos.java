@@ -53,6 +53,15 @@ public class Titulos {
 
 
     //Métodos
+
+    //Método Construtor
+
+
+    public Titulos(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
     public void exibeFichaTecnica(){
         System.out.println("Nome do Filme: " + nome);
         System.out.println("Ano de Lançamento: " + anoDeLancamento);

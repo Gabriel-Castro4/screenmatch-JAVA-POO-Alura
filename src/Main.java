@@ -9,10 +9,12 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Filmes newFilm = new Filmes();
+                                    //Parâmetros do método construtor:
+        Filmes newFilm = new Filmes("O poderoso chefão", 1970);
 
-        newFilm.setNome("O poderoso chefão");
-        newFilm.setAnoDeLancamento(1970);
+        /*Comentados por conta do método construtor*/
+        //newFilm.setNome("O poderoso chefão");
+        //newFilm.setAnoDeLancamento(1970);
         newFilm.setDuracaoEmMinutos(180);
 
         newFilm.avalia(8);
@@ -23,23 +25,23 @@ public class Main {
         System.out.println(newFilm.getTotalDeAvaliacoes());
         newFilm.exibeFichaTecnica();
 
-        Filmes oneFilm = new Filmes();
+        Filmes oneFilm = new Filmes("Avatar", 2023);
 
-        oneFilm.setNome("Avatar");
-        oneFilm.setAnoDeLancamento(2023);
+        //oneFilm.setNome("Avatar");
+        //oneFilm.setAnoDeLancamento(2023);
         oneFilm.setDuracaoEmMinutos(200);
 
-        Filmes twoFilm = new Filmes();
+        Filmes twoFilm = new Filmes("Taxi Driver", 1970);
 
-        twoFilm.setNome("Taxi Driver");
-        twoFilm.setAnoDeLancamento(1970);
+        //twoFilm.setNome("Taxi Driver");
+        //twoFilm.setAnoDeLancamento(1970);
         twoFilm.setDuracaoEmMinutos(120);
 
         System.out.println("*******************************************");
 
-        Series lost = new Series();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Series lost = new Series("Lost", 2000);
+        //lost.setNome("Lost");
+        //lost.setAnoDeLancamento(2000);
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.setMinutosPorEpisodio(50);
@@ -75,6 +77,7 @@ public class Main {
 
         /*Está puxando a "toString()" da classe "Filmes"*/
         System.out.println(listaDeFilmes.get(0));
+        System.out.println(listaDeFilmes);
 
     }
 }
