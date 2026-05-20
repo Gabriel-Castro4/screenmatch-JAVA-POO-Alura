@@ -17,7 +17,6 @@ public class Filmes extends Titulos implements Classificavel {
         this.diretor = diretor;
     }
 
-
     //Métodos
 
 
@@ -26,5 +25,14 @@ public class Filmes extends Titulos implements Classificavel {
     public int getClassificacao() {
         //Transformando o método média "mediaDasAvaliacoes" que é um double em int
         return (int) mediaDasAvaliacoes() / 2;
+    }
+
+
+    /*O "toString()" em JAVA é um método especial usado para transformar um objeto em uma representação de texto (String)
+    * estamos mudando-o para que quando chamarmos a "listaDeFilmes", ela aparecer na forma que está declarada neste método
+    * Estamos herdando este método da classe pai de todas as classes, a "Object"*/
+    @Override
+    public String toString() {
+        return "Filme: " + this.getNome() + "("+ this.getAnoDeLancamento() +")";
     }
 }
