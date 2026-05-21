@@ -5,6 +5,7 @@ import br.com.alura.screenmatch.modelos.Series;
 import br.com.alura.screenmatch.modelos.Titulos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainComListas {
     public static void main(String[] args) {
@@ -49,5 +50,25 @@ public class MainComListas {
             //System.out.println("Classificação: " + filme.getClassificacao());
 
         }
+        System.out.println("*************************************************");
+
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+        buscaPorArtista.add("Cavalera");
+        buscaPorArtista.add("Adam Samdler");
+        buscaPorArtista.add("Burton C Bell");
+        System.out.println(buscaPorArtista);
+
+        /*Isso é um método estático, o "sort()" (Ou seja, não precisa criar um objeto para chamá-lo, ele é de propriedade da classe "Collections").
+        * Ele ordena as listas em ordem alfabética*/
+        Collections.sort(buscaPorArtista);
+        System.out.println("Depois da ordenação: ");
+        System.out.println(buscaPorArtista);
+
+    //O erro acontece pq a classe "Titulos não possui comparativos para organizar os itens da lista entre si, então teremos que implementar a interface "Comparable" na classe "Titulos" e herdar o método "compareTo()".
+        Collections.sort(lista);
+        System.out.println("Lista de títulos ordenados: ");
+        System.out.println(lista);
+
+
     }
 }

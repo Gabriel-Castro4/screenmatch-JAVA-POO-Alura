@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Titulos {
+public class Titulos implements Comparable<Titulos>{
 
     //Atributos
     private String nome;
@@ -86,4 +86,11 @@ public class Titulos {
 
     }
 
+    //Método exigido pela interface Comparable
+    @Override
+    public int compareTo(Titulos outroTitulo) {
+                    //nomeDoTítlo       //nomeDoOutroTitlo
+        return this.getNome().compareTo(outroTitulo.getNome());
+        /*Compare o nome de um título com o nome de outro titulo*/
+    }
 }
