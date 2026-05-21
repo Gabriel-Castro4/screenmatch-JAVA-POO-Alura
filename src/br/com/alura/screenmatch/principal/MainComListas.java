@@ -14,7 +14,7 @@ public class MainComListas {
         Filmes twoFilm = new Filmes("Taxi Driver", 1970);
         Series lost = new Series("Lost", 2000);
 
-        ArrayList<Titulos> lista = new ArrayList<>();lista.add(oneFilm);
+        ArrayList<Titulos> lista = new ArrayList<>();
         lista.add(twoFilm);
         twoFilm.avalia(8);
         lista.add(newFilm);
@@ -32,13 +32,21 @@ public class MainComListas {
             //imprima(itens)
             System.out.println(item);
 
+            //uso de um "if" e "instanceof" no lugar desse código seguinte
+           //Se //item //herda  //tipo //nomeDoItemDoTipoFilme
+            if (item instanceof Filmes filme) {
+                //Os itens do tipo "Filmes", agora se chamam "filme", mas continuam sendo um "item"
+                System.out.println("Classificação: " + filme.getClassificacao());
+            }
+
             /*Eu quero que se caso um desses itens forem do tipo "Filmes",
             * mostre a classificação deles (Apenas os objetos do tipo:"Filmes" herdam o método "getClassificacao()" da interface "Classificável") */
 
+            /*CÓDIGO ANTIGO: */
            //tipo //nome   //casting //nomeDoItem
-            Filmes filme = (Filmes) item;
+            //Filmes filme = (Filmes) item;
        //Os itens do tipo "Filmes", agora se chamam "filme", mas continuam sendo "item"
-            System.out.println("Classificação: " + filme.getClassificacao());
+            //System.out.println("Classificação: " + filme.getClassificacao());
 
         }
     }
