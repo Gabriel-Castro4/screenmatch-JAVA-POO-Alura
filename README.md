@@ -25,4 +25,6 @@ Décimo primeiro (11°) commit: implementação da classificavel na classe episo
 
 Décimo segundo (12°) commit, início no aprendizado sobre lists,ArrayLists e criação da lista "listaDeFilmes". Estamos herdando o método "toString()" da classe mãe de todas as classes "Object" e modificamos para que quandos chamássemos a listaDeFilmes, ela fosse apresentada da seguinte forma: "Filme: Avatar(2023)"; 
 
+Décimo terceiro (13°)  commit, estamos criando os métodos construtores para as classes:"Titulos","Filmes" e "Séries";
+
 Décimo quarto (14°) commit, criamos uma nova package chamada "Principal" e passamos a classe "Main" para ela; E também dentro da package fizemos a classe "MainComListas", adição de um "for-avançado" dentro o "MainComListas" para ele printar todos os filmes registrados, se caso algum "item" da lista for do tipo "Filmes" que herda da classe "Títulos" ele apareça a classificação do filme. (Lembrando que o método "getClassificacao()" é um método herdado da interface "Classíficável" e que apenas a classe "Filmes" herda dela). "OBS: O ERRO DE EXCEPTION QUANDO EXECUTADO UM "ITEM" DO TIPO "SERIES" SERÁ CONSERTADO NO PRÓXIMO COMMIT"
