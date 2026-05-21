@@ -56,4 +56,9 @@ public class Series extends Titulos {
         super.exibeFichaTecnica();
         System.out.println("Duração em minutos para maratonar a série: " + getDuracaoEmMinutos());
     }
+
+    @Override
+    public String toString() {
+        return "Série: " + this.getNome() + "("+ this.getAnoDeLancamento() +")" + " Temporadas: " + "("+ this.getTemporadas() +")" ;
+    }
 }
