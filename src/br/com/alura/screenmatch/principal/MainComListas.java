@@ -6,6 +6,7 @@ import br.com.alura.screenmatch.modelos.Titulos;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class MainComListas {
     public static void main(String[] args) {
@@ -69,6 +70,13 @@ public class MainComListas {
         System.out.println("Lista de títulos ordenados: ");
         System.out.println(lista);
 
+        /*O o ".sort()" é um comparador
+        * Dentro do ".sort()", nós colocamos um critério que no caso é o:
+        * "Comparator.comparing()", nesse caso estamos querendo comparar itens do tipo "Titulos", e dentro do tipo "Titulos", queremos comparar o método "getAnoDeLancamento"
+        * O "::" é uma referêcia de método, ele pega a classe "Filmes" e faz referência ao método "getAnoDeLancamento" dela*/
+        lista.sort(Comparator.comparing(Titulos::getAnoDeLancamento));
+        System.out.println("Ordenados pelo ano: ");
+        System.out.println(lista);
 
     }
 }
