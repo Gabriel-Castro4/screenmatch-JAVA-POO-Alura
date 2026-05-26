@@ -1,9 +1,15 @@
 package br.com.alura.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulos implements Comparable<Titulos>{
 
     //Atributos
+
+    //Com esse "@SerializedName()" estamos ensinando ao JSON como é o nome dessa informação quando ele for puxar ela. Se está escrito "Title", ela é um nome, se está escrito "Year", ela é o ano de lançamento.
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -92,5 +98,11 @@ public class Titulos implements Comparable<Titulos>{
                     //nomeDoTítlo       //nomeDoOutroTitlo
         return this.getNome().compareTo(outroTitulo.getNome());
         /*Compare o nome de um título com o nome de outro titulo*/
+    }
+
+    @Override
+    public String toString() {
+        return "nome='" + nome + '\'' +
+                ", anoDeLancamento= " + anoDeLancamento;
     }
 }
