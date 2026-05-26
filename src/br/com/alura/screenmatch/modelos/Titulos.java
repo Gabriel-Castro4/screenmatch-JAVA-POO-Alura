@@ -16,6 +16,23 @@ public class Titulos implements Comparable<Titulos>{
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
+
+    //Método construtor para a "TitulosOmdb" dizendo que ela também faz parte da classe "Títulos".
+    public Titulos(TitulosOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        //Aqui ele está tranformando o tipo da "meuTituloOmdb.year()" em inteiro, para convergir com o "anoDeLancamento"
+                                //Tipo.funcao(nomeDaRecord.nomeDoParametro());
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
+        //Mesma lógica do de cima
+        /*O ".substring(0,2)", diz quais posições deve printar, ex:
+        * "44 min"
+        *  012345
+        * ele só irá printar:
+        * 44
+        * 012*/                                                             //de 0 até 3
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,3));
+    }
+
     //Getters and Setters
     public String getNome() {
         return nome;
@@ -102,7 +119,8 @@ public class Titulos implements Comparable<Titulos>{
 
     @Override
     public String toString() {
-        return "nome='" + nome + '\'' +
-                ", anoDeLancamento= " + anoDeLancamento;
+        return "Título: " + nome + '\'' +
+                ", Ano de lançamento: " + anoDeLancamento +
+                ", "+ "Duração em minutos: " + duracaoEmMinutos;
     }
 }
