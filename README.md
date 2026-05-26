@@ -33,4 +33,4 @@ Décimo quinto (15°) commit, nós descobrimos como printar os itens de uma list
 
 Décimo sexto (16°) commit, na classe "MainComListas" utilizamos o ".sort()" novamente, mas agora passando critérios, que no caso é: "Comparator.comparing()" e queremos comparar o método "getAnoDeLancamento" dentro da classe "Filmes";
 
-Com esse último Commit, finalizo os cursos: Formação Aprenda a programar em Java com Orientação a Objetos e Java trabalhando com lista e coleções de dados.  
+Décimo sétimo (17°) commit, criamos a classse "MainComBuscas", e demos os primeiros passos no consumo de API's, que no caso foi de um site chamado: OMDB API, que nos trás informações de filmes. Criamos um objeto "client", criamos um objeto "request" que exige o link da API e criamos uma lista "response" da interface "HttpResponse<String>" que irá printar as informações do link;
