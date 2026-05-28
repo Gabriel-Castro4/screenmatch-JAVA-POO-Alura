@@ -23,36 +23,51 @@ public class MainComBuscas {               //Esse "throws" é para que o método
 
         //fizemos uma variável que padroniza como será o link da pesquisa, com a informação da variável "busca"
         String endereco = "https://omdbapi.com/?t=" + busca + "&apikey=d56cca0";
+        try{
+            //Aqui estamos criando um cliente
+            HttpClient client = HttpClient.newHttpClient();
 
-        //Aqui estamos criando um cliente
-        HttpClient client = HttpClient.newHttpClient();
+            //Aqui estamos criando uma requisição
+            HttpRequest request = HttpRequest.newBuilder().
+                    //trocamos a busca do link direto, para uma variável que já possui o link dentro dela, mas com o nome do filme colocado pelo própio usuário.
+                            uri(URI.create(endereco))
+                    .build();
 
-        //Aqui estamos criando uma requisição
-        HttpRequest request = HttpRequest.newBuilder().
-                //trocamos a busca do link direto, para uma variável que já possui o link dentro dela, mas com o nome do filme colocado pelo própio usuário.
-                uri(URI.create(endereco))
-                .build();
+            /*JÁ FIZEMOS A REQUISIÇÃO, AGORA PRECISAMOS DA RESPOSTA*/
 
-        /*JÁ FIZEMOS A REQUISIÇÃO, AGORA PRECISAMOS DA RESPOSTA*/
+            //Resposta
+            HttpResponse<String> response = client
+                    .send(request, HttpResponse.BodyHandlers.ofString());
+            String json = response.body();
+            System.out.println(json);
 
-        //Resposta
-        HttpResponse<String> response = client
-                .send(request, HttpResponse.BodyHandlers.ofString());
-        String json = response.body();
-        System.out.println(json);
+            //Biblioteca do google baixada no mvnrepository que transforma informações em formato JSON, ou também transforma JSON em outras formas
 
-        //Biblioteca do google baixada no mvnrepository que transforma informações em formato JSON, ou também transforma JSON em outras formas
+            //Com isso estamos dizendo que uma informação da record "TitulosOmdb", ela é verdadeira independente de que a priemira letra da informação seja maiúscula ou minúscula no JSON.
+            Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+            //Estamos pegando as informações da classe "Titulos", e colocando as informações da API com a nossa classe, comparando elas e colocando elas conforme designamos no "toString" da classe "Titulos"
+            //Titulos meuTitulo = gson.fromJson(json, Titulos.class);
+            TitulosOmdb meuTituloOmdb = gson.fromJson(json, TitulosOmdb.class);
+            System.out.println(meuTituloOmdb);
 
-                    //Com isso estamos dizendo que uma informação da record "TitulosOmdb", ela é verdadeira independente de que a priemira letra da informação seja maiúscula ou minúscula no JSON.
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
-        //Estamos pegando as informações da classe "Titulos", e colocando as informações da API com a nossa classe, comparando elas e colocando elas conforme designamos no "toString" da classe "Titulos"
-        //Titulos meuTitulo = gson.fromJson(json, Titulos.class);
-        TitulosOmdb meuTituloOmdb = gson.fromJson(json, TitulosOmdb.class);
-        System.out.println(meuTituloOmdb);
-        //Aqui estamos dizendo que o item da API além de fazer parte da record, ele também faz parte da classe "Títulos", então nesse cógido estamos dizendo isso, e na classe "Títulos" estou criando um método construtor para ele.
-        Titulos meuTitulo = new Titulos(meuTituloOmdb);
-        System.out.println("Título já convertido: ");
-        System.out.println(meuTitulo);
+            //tente:
+            //try {
+            //Aqui estamos dizendo que o item da API além de fazer parte da record, ele também faz parte da classe "Títulos", então nesse cógido estamos dizendo isso, e na classe "Títulos" estou criando um método construtor para ele.
+            Titulos meuTitulo = new Titulos(meuTituloOmdb);
+            System.out.println("Título já convertido: ");
+            System.out.println(meuTitulo);
+
+            //Caso aconteça um erro:
+            //pegue: //tipo de erro identificado //declarandoNomeDoErro
+        } catch (NumberFormatException e){
+            System.out.println("Aconteceu um erro:");
+            //"nomeDoErro.getMessage()"
+            System.out.println(e.getMessage());
+            //ele vai printar aonde está o erro.
+        } catch (IllegalArgumentException e) {
+            System.out.println("Algum erro de argumento na busca, verifique o endereço");
+        }
+
 
     }
 }
