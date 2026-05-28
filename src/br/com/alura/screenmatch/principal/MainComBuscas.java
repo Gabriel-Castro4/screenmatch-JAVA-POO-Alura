@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch.principal;
 
+import br.com.alura.screenmatch.excecao.ErroDeConversaoDeAnoException;
 import br.com.alura.screenmatch.modelos.Titulos;
 import br.com.alura.screenmatch.modelos.TitulosOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -19,10 +20,14 @@ public class MainComBuscas {               //Esse "throws" é para que o método
 
         //Fizemos uma pergunta para o usuário digitar o nome do filme
         System.out.println("Digite um filme: ");
-        var busca = scan.next();
+        /*var busca = scan.next(); Só estava reconhecendo o primeiro nome*/
+        var busca = scan.nextLine(); //Está reconhecendo toda a linha
+        //Aqui o código está dizendo que: se caso a respotas possuir nomes compostos, por exemplo: "Tropa de Elite", ela vai modificar par: "Tropa+de+Elite"
+        busca = busca.replace(" ", "+");
 
         //fizemos uma variável que padroniza como será o link da pesquisa, com a informação da variável "busca"
         String endereco = "https://omdbapi.com/?t=" + busca + "&apikey=d56cca0";
+        System.out.println(endereco);
         try{
             //Aqui estamos criando um cliente
             HttpClient client = HttpClient.newHttpClient();
@@ -66,6 +71,8 @@ public class MainComBuscas {               //Esse "throws" é para que o método
             //ele vai printar aonde está o erro.
         } catch (IllegalArgumentException e) {
             System.out.println("Algum erro de argumento na busca, verifique o endereço");
+        } catch (ErroDeConversaoDeAnoException e) {
+
         }
 
 

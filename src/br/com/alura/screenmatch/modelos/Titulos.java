@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
+import br.com.alura.screenmatch.excecao.ErroDeConversaoDeAnoException;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulos implements Comparable<Titulos>{
@@ -7,9 +8,9 @@ public class Titulos implements Comparable<Titulos>{
     //Atributos
 
     //Com esse "@SerializedName()" estamos ensinando ao JSON como é o nome dessa informação quando ele for puxar ela. Se está escrito "Title", ela é um nome, se está escrito "Year", ela é o ano de lançamento.
-    @SerializedName("Title")
+    //@SerializedName("Title")
     private String nome;
-    @SerializedName("Year")
+    //@SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -20,17 +21,26 @@ public class Titulos implements Comparable<Titulos>{
     //Método construtor para a "TitulosOmdb" dizendo que ela também faz parte da classe "Títulos".
     public Titulos(TitulosOmdb meuTituloOmdb) {
         this.nome = meuTituloOmdb.title();
+
+        if (meuTituloOmdb.year().length() > 4) {
+            throw new ErroDeConversaoDeAnoException("Não consegui converter o ano porque possui mais de 4 caracteres");
+        }
         //Aqui ele está tranformando o tipo da "meuTituloOmdb.year()" em inteiro, para convergir com o "anoDeLancamento"
                                 //Tipo.funcao(nomeDaRecord.nomeDoParametro());
         this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
-        //Mesma lógica do de cima
-        /*O ".substring(0,2)", diz quais posições deve printar, ex:
-        * "44 min"
-        *  012345
-        * ele só irá printar:
-        * 44
-        * 012*/                                                             //de 0 até 3
-        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,3));
+        //Mesma lógica da de cima
+
+        //Nesse caso, as pesquisas que o runtime era menor que 3 digitos, por exemplo "95 min", ele estava considerando como erro, então para consertar isso, eu fiz a seguinte coisa:
+
+        /*criei uma var chamada runtime que recebe meuTituloOmdb.runtime()*/
+        String runtime = meuTituloOmdb.runtime();
+        //aqui ele procura onde existe espaço em branco na informação vinda da API, e guarda a posição de onde existem espaços preenchidos
+        int posicaoEspaco = runtime.indexOf(" ");
+        /*Aqui ele pega só os números e lê da posição 0, até a posição onde possui espaços,
+        guarda só as partes dos números*/
+        String apenasNumeros = runtime.substring(0, posicaoEspaco);
+        //e aqui ele está convertendo os textos para os números
+        this.duracaoEmMinutos = Integer.valueOf(apenasNumeros);
     }
 
     //Getters and Setters
