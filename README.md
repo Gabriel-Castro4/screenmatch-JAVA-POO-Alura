@@ -52,3 +52,5 @@ Vigésimo segundo (22°) commit, na "MainComBuscas" nós fizemos um objeto "File
 também dentro da "MainComBuscas" colocamos uma estrutura de repetição "while" junto com um "if" que enquanto o usuário não digitar sair, o programa continuará rodando e fazendo as perguntas;
 Estamos guardando as informações dos filmes numa list do tipo Titulos chamada "novosFilmes", e ela está guardando as informações os titulos digiatdos pelo user;
 Depois reescremos o chamado da biblioteca externa gson e FileWriter, para que ele crie um arquivo q no caso foi o "filmes.json" já convertido em JSON;
+
+*O Gson TRANSFORMA informações de uma API (normalmente do tipo .json), e transforma em um objeto JAVA*
