@@ -1,56 +1,89 @@
-/* OBS: Dos Commits 1 até o 11 todo o aprendizado foi centrado no curso da Alura:  Formação Aprenda a programar em Java com Orientação a Objetos; A partir dos commits 12 até o 16, ele está centrado no curso: Java trabalhando com lista e coleções de dados; A partir do commit 17 ele está centrado no curso: Java consumindo API, gravando arquivos e lidando com erros. */
+# Screenmatch - Java com POO, Listas, Coleções e Consumo de API
 
-Neste projeto estou acompanhando as aulas da Alura do curso: Formação Aprenda a programar em Java com Orientação a Objetos.
-No primeiro (1°) commit foi a criação do projeto em si, criação da classe Main e Flmes, criação de métodos e atributos;
+[![Java](https://img.shields.io/badge/Java-17-blue.svg)](https://adoptium.net/)
+[![POO](https://img.shields.io/badge/POO-Avançado-green.svg)](https://www.alura.com.br/)
+[![Gson](https://img.shields.io/badge/Gson-2.10-lightgrey.svg)](https://github.com/google/gson)
 
-O segundo (2°)  commit foram as primeiras modificações de métodos muito extensos como: a modificação do "mediaDasAvaliacoes" e algumas modificações "exibeFichaTecnica" e um exception no método "avalia";
+## Sobre o Projeto
 
-o terceiro (3°) commit foi a simplificação do método avalia e remoção de verbosidades do mesmo;
+Este repositório documenta meu aprendizado em múltiplos cursos da Alura, abrangendo desde os fundamentos da Programação Orientada a Objetos (POO) em Java até tópicos mais avançados como listas, coleções de dados e consumo de APIs. O projeto "Screenmatch" foi desenvolvido como uma aplicação prática para consolidar esses conhecimentos.
 
-O quarto commit (4°) foi a criação do Package "br.com.alura.screenmatch.modelos.Filmes" e adição da classe Filmes na mesma e modificações nas permissões dos métodos;
+O objetivo principal é construir uma aplicação Java que simula um sistema de cadastro e busca de títulos (filmes e séries), aplicando conceitos de orientação a objetos, manipulação de coleções, ordenação de dados e integração com APIs externas para obter informações reais.
 
-O quinto (5°) remoção de alguns Getters e Setters que eu não quero que o usuário tenha acesso;
+## Tecnologias Utilizadas
 
-O Sexto (6°) foi a criação de uma classe abstrata chamada Titulo e passando toda a paternidade da classe filmes para ela e passando a herança dela para as classes Filmes e Series e criando as exclusividades de ambas;
+- **Java** - Linguagem de programação utilizada no projeto.
+- **Paradigma POO** - Programação Orientada a Objetos (classes, herança, polimorfismo, encapsulamento, abstração).
+- **Coleções Java** - Uso de Listas (ArrayList), ordenação com Collections e Comparator.
+- **API Externa (OMDB)** - Consumo de uma API REST para buscar informações de filmes.
+- **Biblioteca Gson** - Biblioteca do Google para conversão de dados JSON em objetos Java.
+- **Manipulação de Arquivos** - Criação e gravação de arquivos de texto (.txt) e JSON (.json).
+- **Tratamento de Exceções** - Criação e lançamento de exceções personalizadas.
 
-Nesse Sétimo (7°) commit estamos aplicando o conceito de polimorfismo nos métodos "duracaoEmMinutos" e "exibeFichaTecnica";
+## Estrutura do Projeto e Evolução (Histórico de Commits)
 
-No Oitavo (8°) Commit nós criamos uma nova package para calcular o tempo de duração dos títulos (Filmes/Séries) que desejamos. Utilizamos a sobrecarga de pacotes no método "inclui";
+O projeto foi desenvolvido em etapas, cada uma representada por commits que documentam a evolução do aprendizado.
 
-No Nono (9°) commit achamos que essa sobrecarga de pacotes não é bom para o design do código, por isso comentamos os antigos métodos e refizemos ele com o parâmetros da classe Mãe "Titulos" que já engloba Filmes e Series;
+### Fase 1: Fundamentos de Programação Orientada a Objetos (Commits 1 a 11)
+- **Commit 1:** Criação do projeto, da classe `Main` e da classe `Filmes`, com atributos e métodos básicos.
+- **Commit 2:** Refatoração de métodos extensos (`mediaDasAvaliacoes`, `exibeFichaTecnica`) e adição de tratamento de exceção no método `avalia`.
+- **Commit 3:** Simplificação do método `avalia` e remoção de verbosidades.
+- **Commit 4:** Organização do código em pacotes (`br.com.alura.screenmatch.modelos.Filmes`) e ajuste nas permissões dos métodos.
+- **Commit 5:** Remoção de getters e setters que não deveriam ser acessíveis ao usuário.
+- **Commit 6:** Criação da classe abstrata `Titulo`, que se torna a classe mãe de `Filmes` e `Series`, aplicando o conceito de herança.
+- **Commit 7:** Aplicação do conceito de polimorfismo nos métodos `duracaoEmMinutos` e `exibeFichaTecnica`.
+- **Commit 8:** Criação de um pacote para calcular o tempo de duração de títulos, utilizando sobrecarga de métodos em `inclui`.
+- **Commit 9:** Refatoração do método `inclui` para receber parâmetros da classe mãe `Titulos`, melhorando o design do código.
+- **Commit 10:** Criação da classe `Episodios` e da interface `Classificavel`. Implementação da interface na classe `Filmes`.
+- **Commit 11:** Implementação da interface `Classificavel` em `Episodios`, criação da classe `FiltroRecomendacao` para recomendar títulos baseados em views.
 
-Décimo (10°) commit, criamos a classe "Episódios", criamos uma interface chamada "classificavel" na package "calculos". Criamos o atributo necessário nas classes que vão implementar a interface, que no caso é a classe "Filmes";
+### Fase 2: Listas, Coleções e Ordenação (Commits 12 a 16)
+- **Commit 12:** Introdução ao uso de `ArrayList` para criar uma `listaDeFilmes`. Sobrescrita do método `toString()` para exibir os filmes de forma personalizada.
+- **Commit 13:** Criação de métodos construtores para as classes `Titulos`, `Filmes` e `Series`.
+- **Commit 14:** Criação do pacote `Principal` e da classe `MainComListas`. Uso de um loop `for` avançado para iterar sobre a lista e exibir a classificação de filmes.
+- **Commit 15:** Ordenação da lista de `Titulos` em ordem alfabética, implementando a interface `Comparable` na classe `Titulos` e sobrescrevendo o método `compareTo`.
+- **Commit 16:** Ordenação da lista utilizando `Comparator.comparing()` para ordenar por `anoDeLancamento`.
 
-Décimo primeiro (11°) commit: implementação da classificavel na classe episodios e regrinha no getClassificacao da mesma. Criação da classe FiltroRecomendacao na package calculos e criamos um método nele que diz se a série vai bem dependendo da quantidade de Views;
+### Fase 3: Consumo de API, Manipulação de Arquivos e Tratamento de Erros (Commits 17 a 22)
+- **Commit 17:** Criação da classe `MainComBuscas`. Primeiros passos no consumo da API OMDB para buscar informações de filmes.
+- **Commit 18:** Implementação de uma busca interativa com o usuário. Integração da biblioteca Gson para converter a resposta JSON da API em objetos Java. Mapeamento de atributos da API para a classe `Titulos`.
+- **Commit 19:** Criação de uma `Record` chamada `TitulosOmdb` para mapear a resposta da API. Ajustes na conversão de tipos de dados (String para Integer). Utilização de `GsonBuilder` para configurar a política de nomenclatura dos campos.
+- **Commit 20:** Adição de um bloco `try-catch` na `MainComBuscas` para tratar possíveis erros na requisição à API.
+- **Commit 21:** Tratamento de entradas do usuário com `busca.replace()` para substituir espaços por "+". Ajuste no construtor de `Titulos` para tratar a duração (`runtime`) vinda da API. Criação de uma exceção personalizada (`ErroDeConversaoDeAnoException`) para tratar anos com mais de 4 caracteres.
+- **Commit 22:** Utilização de `FileWriter` para criar e gravar um arquivo de texto (`filmes.txt`) com os dados do filme buscado. Implementação de um loop `while` para permitir múltiplas buscas. Criação de uma lista (`novosFilmes`) para armazenar os títulos buscados. Escrita da lista em um arquivo JSON (`filmes.json`) utilizando o Gson.
 
-Décimo segundo (12°) commit, início no aprendizado sobre lists,ArrayLists e criação da lista "listaDeFilmes". Estamos herdando o método "toString()" da classe mãe de todas as classes "Object" e modificamos para que quandos chamássemos a listaDeFilmes, ela fosse apresentada da seguinte forma: "Filme: Avatar(2023)"; 
+## Como Utilizar este Repositório
 
-Décimo terceiro (13°)  commit, estamos criando os métodos construtores para as classes:"Titulos","Filmes" e "Séries";
+1.  **Clone o repositório** para sua máquina local.
+2.  Importe o projeto para sua IDE de preferência.
+3.  Explore as classes nos pacotes para entender a estrutura e a evolução do código.
+4.  Execute a classe `Main` para testar as funcionalidades básicas.
+5.  Execute a classe `MainComListas` para ver a manipulação de listas e ordenação.
+6.  Execute a classe `MainComBuscas` para consumir a API OMDB (é necessário ter uma chave de API, que pode ser obtida gratuitamente no site da OMDB).
+7.  Acompanhe os commits para ver a progressão do aprendizado passo a passo.
 
-Décimo quarto (14°) commit, criamos uma nova package chamada "Principal" e passamos a classe "Main" para ela; E também dentro da package fizemos a classe "MainComListas", adição de um "for-avançado" dentro do "MainComListas" para printar todos os filmes registrados, se caso algum "item" da lista for do tipo "Filmes" que herda da classe "Títulos" ele apareça a classificação do filme. (Lembrando que o método "getClassificacao()" é um método herdado da interface "Classíficável" e que apenas a classe "Filmes" herda dela). "OBS: O ERRO DE EXCEPTION QUANDO EXECUTADO UM "ITEM" DO TIPO "SERIES" SERÁ CONSERTADO NO PRÓXIMO COMMIT"
+## Principais Aprendizados
 
-Décimo quinto (15°) commit, nós descobrimos como printar os itens de uma lista em ordem alfabética utilizando o método estático "sort()" da classe "Collections", e quisemos aplicar este método na nossa "lista" de "Titulos". Para isso tivemos que descobrir como uma lista do tipo String é funcional com esse método, ela herda o método "compareTo" da interface "Comparable", então impletamos a interface na classe "Titulos" e herdamos o método "compareTo()", passamos os parâmetros do tipo "Titulos" e de nome "outroTitulo" e pedimos para que ele retorne um ".getNome()", use a função ".compareTo()" e dentro dessa função ele use o "outroTitulo.getNome()".
+Este projeto proporcionou a aplicação prática de uma ampla gama de conceitos fundamentais e avançados em Java, incluindo:
 
-Décimo sexto (16°) commit, na classe "MainComListas" utilizamos o ".sort()" novamente, mas agora passando critérios, que no caso é: "Comparator.comparing()" e queremos comparar o método "getAnoDeLancamento" dentro da classe "Filmes";
+- **Programação Orientada a Objetos:** Herança, polimorfismo, encapsulamento, abstração, interfaces e classes abstratas.
+- **Estruturas de Dados:** Uso de Listas (ArrayList), ordenação com `Collections` e `Comparator`.
+- **Consumo de APIs:** Realização de requisições HTTP e tratamento de respostas JSON.
+- **Bibliotecas Externas:** Integração e uso da biblioteca Gson para parsing de JSON.
+- **Manipulação de Arquivos:** Criação e escrita em arquivos de texto e JSON.
+- **Tratamento de Exceções:** Criação e lançamento de exceções personalizadas para um código mais robusto.
+- **Boas Práticas:** Organização de código em pacotes, refatoração e evolução incremental do projeto.
 
-Décimo sétimo (17°) commit, criamos a classse "MainComBuscas", e demos os primeiros passos no consumo de API's, que no caso foi de um site chamado: OMDB API, que nos trás informações de filmes. Criamos um objeto "client", criamos um objeto "request" que exige o link da API e criamos uma lista "response" da interface "HttpResponse<String>" que irá printar as informações do link;
+## Referências
 
-Décimo oitavo (18°) commit, criamos 2 variáveis dentro da classe "MainComListas", uma chamada "busca", que guarda a informação do usuário, e a "endereco" que transforma a informação da "busca" em um link, e onde tinha o endereço do link na requisição, agora ela recebe apenas a variável transformada "endereco";
-Baixamos no mvn reposiory o Gson, que é uma biblioteca do Google para Java que trasnforma informações em formato JSON, ou JSON em outros formatos; criamos um objeto da biblioteca de nome "gson", e ele recebe os parâmetros (json, Titulos.class). Nesse momento o filme que tem as informações recebidas pela API, se torna um novo título, com isso, convergimos que por exemplo, uma "title" da API, é a mesma coisa do atributo "nome" da classe "Titulos" e um "year", é a mesma coisa do atributo "anoDeLancamento" ;
-Modificamos o "toString()" da classe "Titulos", para que as informações apareça da forma que nos designamos na "toString";
+- [Documentação Oficial do Java](https://docs.oracle.com/en/java/)
+- [Alura - Formação Aprenda a programar em Java com Orientação a Objetos](https://www.alura.com.br/)
+- [Alura - Java: trabalhando com listas e coleções de dados](https://www.alura.com.br/)
+- [Alura - Java: consumindo API, gravando arquivos e lidando com erros](https://www.alura.com.br/)
+- [OMDB API](https://www.omdbapi.com/)
+- [Biblioteca Gson](https://github.com/google/gson)
 
-Décimo nono (19°) commit, criamos uma record, que é uma classe imutável dentro da Package "modelos", chamada "TitulosOmdb", que possui os parâmetros: (String title, String year, String runtime). *OBS: as informações estavam dando "null" porque nos parâmetros da "TitulosOmdb" estavam começando em letras minúsculas, então fomos na documentação da biblioteca Gson no GitHub e pegamos a seguinte função: "new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();" e isso faz com o que independente do formato das letras, a informação será entendida.*
-Depois ainda na classe: "MainComBuscas" dizemos que a "meuTituloOmdb" também faz parte da classe "Títulos" e na classe "Títulos" criamos um construtor para ela. No construtor percebemos que o tipo dos parâmetros da record não batiam com os tipo do atributos da classe "Títulos", então transformamos os tipos dos parâmetros nos tipos dos atributos utilizando o seguinte método: Integer.valueOf(meuTituloOmdb.year()); //Tipo.funcao(nomeDaRecord.nomeDoParametro()); e dentro do "nomeDoParametro", eu determinei a quantidade de casas que a as informações dos minutos devem ser printadas "(0,3)".
+## Autor
 
-Vigésimo (20°) commit, colocamos um "try catch" no "MainComBuscas" caso alguma informação venha errada da API;
-
-Vigésimo primeiro (21°) commit, na "MainComBuscas" nós fizemos um "busca.replace", porque se o nome do filme for composto, os espaços em branco são transformados em "+" e evita erros de busca; E também modificamos para "scan.nextLine()", pq o "next()" só estava lendo o primeiro nome, já o "nextLine" ele lê tudo que foi escrito na linha;
-Já na "Titulos", fizemos uma pequena modificação no método construtor pq quando o "runtime" vinha tinha 2 digitos, ao invés de 3 que é oq foi designado para ele ler no código, isso gerava um erro, por isso fizemos uma "var" que recebia o valor de "meuTituloOmdb.runtime()", depois fizemos uma "var" chamada "posicaoEspaco" que recebia "runtime.indexOf(" ")", que guarda a posição de onde existem espaços preenchidos, depois criamos outra "var" que lê da posição 0 até a "posicaoEspaco" e depois no "this.duracaoEmMinutos = Integer.valueOf(apenasNumeros)" que ele converte os textos para números e consegue ler a informão da API sem erros;
-Criamos uma nova package chamada "excecao" que extende da interface "RuntimeException" e dentro dela criamos uma classe de exception chamada "ErroDeConversaoDeAnoException", nessa classe nós criamos nossa própria exceção que, se a informação da API, o ano tiver mais de 4 caracteres, essa exceção é lançada;
-
-Vigésimo segundo (22°) commit, na "MainComBuscas" nós fizemos um objeto "FileWriter" de nome "escrita" que cria arquivos dentro do projeto, nesse caso pedimos pra ela criar um arquivo chamado "filmes.txt" e ele passava dentro do arquivo as informações do filme buscado pela api, e já convertido pela "toString()"; 
-também dentro da "MainComBuscas" colocamos uma estrutura de repetição "while" junto com um "if" que enquanto o usuário não digitar sair, o programa continuará rodando e fazendo as perguntas;
-Estamos guardando as informações dos filmes numa list do tipo Titulos chamada "novosFilmes", e ela está guardando as informações os titulos digiatdos pelo user;
-Depois reescremos o chamado da biblioteca externa gson e FileWriter, para que ele crie um arquivo q no caso foi o "filmes.json" já convertido em JSON;
-
-*O Gson TRANSFORMA informações de uma API (normalmente do tipo .json), e transforma em um objeto JAVA*
+**Gabriel Castro**
+- GitHub: [@Gabriel-Castro4](https://github.com/Gabriel-Castro4)
